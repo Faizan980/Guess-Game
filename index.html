@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Greater Game</title>
+</head>
+<body>
+    <div class="page">
+        <h1 class="title" data-text="Guess Game">Guess Game</h1>
+        </div>
+    <div class="container">
+        <form onsubmit="GuessGame(); return false">
+            <label for="number">Your turn</label>
+            <input type="number" name="number" id="num" placeholder="Your Number">
+            <br><br>
+            <label for="number">Freind's turn</label>
+            <input type="number" name="fnumber" id="fnum" placeholder="Your Freind guess">
+            <br><br>
+            <button onsubmit="GuessGame()">Check Now</button>
+        </form> 
+    </div>
+    <h1 id="result"></h1>
+
+    <script>
+        function GuessGame(){
+            let num = +document.querySelector('#num').value;
+            let fnum = +document.querySelector('#fnum').value;
+            let result = num + fnum;
+
+            if(result > 100){
+                document.write(`You loss!! ${result} is greater than 100`)
+            }else if(result == 100){
+                document.write(`Congrats!! you matched the number ${result} and it equals to 100`)
+            }else{
+                document.write(`So close but ${result} is less than 100`)
+            }
+    }
+    </script>
+    
+</body>
+</html>
